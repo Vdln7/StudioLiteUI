@@ -1,4 +1,4 @@
---Funcao para criar um novo botão chamado "Console" onde oculta e mostra o console, também apaga o botão antigo do console e recria caso ele execute o código duas vezes, lá em baixo temos um if que chega se a variavel "botão" encontrou um elemento "TextButton" aninhado dentro de frame "MainBar", caso seja verdadeiro, apagar e recriar novamente
+ --Funcao para criar um novo botão chamado "Console" onde oculta e mostra o console, também apaga o botão antigo do console e recria caso ele execute o código duas vezes, lá em baixo temos um if que chega se a variavel "botão" encontrou um elemento "TextButton" aninhado dentro de frame "MainBar", caso seja verdadeiro, apagar e recriar novamente
 
 --Pega informações do jogador
 local player = game:GetService("Players").LocalPlayer
@@ -99,7 +99,9 @@ function botaobarrasuperior(buttonbarrasuperior, mainbar)
         t:Destroy()
         buttonbarrasuperior = Instance.new("TextButton")
         buttonbarrasuperior.Parent = mainbar
+        buttonbarrasuperior.Name = "ocultar barra superior"
         buttonbarrasuperior.Size = UDim2.new(0.3, 0.3, 0.5, 0)
+        buttonbarrasuperior.Position = UDim2.new(0.3, 0, 0, 0)
 end
 
 function botaopropriedade(buttonpropriedade, findpropriedade)
@@ -133,8 +135,8 @@ end
 if findbotao and findpropriedade and findexplorer and findbarrasuperior then
         buttonconsole(con, mainbar, propriedade, console)
         botaopropriedade(buttonpropriedade, findpropriedade)
-        botaoexplorer(buttonexplorer, mainbar, findexplorer, explorer, estadoexplorer)
-        butaobarrasuperior(buttonbarrasuperior, mainbar)
+        botaoexplorer(buttonexplorer, findexplorer, explorer, estadoexplorer)
+        botaobarrasuperior(buttonbarrasuperior, mainbar)
         print("três botões encontrado")
 else
         buttonbarrasuperior = Instance.new("TextButton")
