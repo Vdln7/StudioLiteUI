@@ -121,7 +121,7 @@ end
 
 
 if findbotao and findpropriedade and findexplorer then
-        buttonconsole(con, topbar, propriedade, console)
+        buttonconsole(con, mainbar, propriedade, console)
         botaopropriedade(buttonpropriedade, findpropriedade)
         botaoexplorer(buttonexplorer, findexplorer, explorer, estadoexplorer)
         print("três botões encontrado")
