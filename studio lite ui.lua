@@ -123,7 +123,7 @@ end
 if findbotao and findpropriedade and findexplorer then
         buttonconsole(con, mainbar, propriedade, console)
         botaopropriedade(buttonpropriedade, findpropriedade)
-        botaoexplorer(buttonexplorer, findexplorer, explorer, estadoexplorer)
+        botaoexplorer(buttonexplorer, mainbar, findexplorer, explorer, estadoexplorer)
         print("três botões encontrado")
 else
         buttonexplorer = Instance.new("TextButton")
