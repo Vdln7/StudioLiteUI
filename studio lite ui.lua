@@ -134,11 +134,11 @@ if findbotao and findpropriedade and findexplorer and findbarrasuperior then
         buttonconsole(con, mainbar, propriedade, console)
         botaopropriedade(buttonpropriedade, findpropriedade)
         botaoexplorer(buttonexplorer, mainbar, findexplorer, explorer, estadoexplorer)
-        buttonbarrasuperior(buttonbarrasuperior, mainbar)
+        butaobarrasuperior(buttonbarrasuperior, mainbar)
         print("três botões encontrado")
 else
         buttonbarrasuperior = Instance.new("TextButton")
-        buttonbarrasuperior.Name = "ocultar barra superior
+        buttonbarrasuperior.Name = "ocultar barra superior"
         buttonbarrasuperior.Parent = mainbar
         botaobarrasuperior(buttonbarrasuperior, mainbar)
         buttonexplorer = Instance.new("TextButton")
