@@ -14,6 +14,7 @@ local propriedade = studiogui:WaitForChild("PropertiesPanel")
 local findbotao = mainbar:FindFirstChild("console")
 local findpropriedade = propriedade:FindFirstChild("propriedade")
 local findexplorer = explorer:FindFirstChild("ocultar explorer")
+local findbarrasuperior = mainbar:FindFirstChild("ocultar barra superior")
 print(findpropriedade)
 local estado = false
 local estadopropriedade = true
@@ -21,6 +22,7 @@ local estadoexplorer = true
 local con
 local buttonpropriedade 
 local buttonexplorer
+local buttonbarrasuperior
 --buttonpropriedade.Name = "propriedade
 
 
@@ -92,6 +94,14 @@ function botaoexplorer(buttonexplorer, findexplorer, explorer, estadoexplorer)
          end)
 end
 
+function botaobarrasuperior(buttonbarrasuperior, mainbar)
+        local t = mainbar:WaitForChild("ocultar barra superior")
+        t:Destroy()
+        buttonbarrasuperior = Instance.new("TextButton")
+        buttonbarrasuperior.Parent = mainbar
+        buttonbarrasuperior.Size = UDim2.new(0.3, 0.3, 0.5, 0)
+end
+
 function botaopropriedade(buttonpropriedade, findpropriedade)
         local t = propriedade:WaitForChild("propriedade")
         t:Destroy()
@@ -120,12 +130,17 @@ function botaopropriedade(buttonpropriedade, findpropriedade)
 end
 
 
-if findbotao and findpropriedade and findexplorer then
+if findbotao and findpropriedade and findexplorer and findbarrasuperior then
         buttonconsole(con, mainbar, propriedade, console)
         botaopropriedade(buttonpropriedade, findpropriedade)
         botaoexplorer(buttonexplorer, mainbar, findexplorer, explorer, estadoexplorer)
+        buttonbarrasuperior(buttonbarrasuperior, mainbar)
         print("três botões encontrado")
 else
+        buttonbarrasuperior = Instance.new("TextButton")
+        buttonbarrasuperior.Name = "ocultar barra superior
+        buttonbarrasuperior.Parent = mainbar
+        botaobarrasuperior(buttonbarrasuperior, mainbar)
         buttonexplorer = Instance.new("TextButton")
         buttonexplorer.Parent = explorer
         buttonexplorer.Name = "ocultar explorer"
